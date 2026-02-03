@@ -10,7 +10,7 @@ from transformers import AutoModelForSequenceClassification,AutoModelForTokenCla
 import pandas as pd
 import seaborn as sn
 import matplotlib.pyplot as plt
-import os
+from pathlib import Path
 
 # Determine which device on import, and then use that elsewhere.
 device = torch.device("cpu")
@@ -209,4 +209,6 @@ def train_model(model, train_loader, val_loader, optimizer, criterion,
     plot_confusion_matrix(cm, class_names)
     # Save the model weights to "saved_models/"
     # TODO Task 2b - Save model weights
-    torch.save(model.state_dict(), "/content/drive/MyDrive/DeepLearning/Project/saved_models/model.pth")
+    output_dir = Path("outputs/models")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    torch.save(model.state_dict(), output_dir / "model.pth")
