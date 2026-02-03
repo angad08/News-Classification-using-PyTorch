@@ -39,8 +39,3 @@ I built this project to show that I can turn messy, real‑world text into somet
    python src/train.py
    ```
 4. Trained models land in `outputs/models/`.
-
-### What I would do next in a real business setting
-* Add a simple web or dashboard view so anyone can drop in new articles and see categories instantly.
-* Track model performance over time and retrain automatically as topics change.
-* Expand the dataset to include more sources and categories.
