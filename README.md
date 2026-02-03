@@ -1,69 +1,41 @@
 ## News Classification with PyTorch
 
-### Quick intro (why this exists)
-I built this to prove I can take raw, messy text and turn it into something a business can use right away. The model reads a news headline or snippet and puts it into the right category. That helps teams scan large volumes of news faster, spot trends sooner, and spend time on decisions instead of sorting.
+### Why this project exists (plain‑English version)
+I built this project to show that I can turn messy, real‑world text into something a business can act on. The model reads a news headline or short article snippet and assigns it to the right category. That means teams can sort large volumes of news quickly, keep an eye on trends, and make faster decisions without reading every single article.
 
-### What this project says about me
-* I can own the full workflow: data → model → results → clean handoff.
-* I keep things organized so anyone (technical or not) can follow it.
-* I can explain ML work in business language without fluff.
+### What this shows about me
+* I can take an idea from concept to working model.
+* I understand how to structure a small machine‑learning project so others can follow it.
+* I can explain technical work in business terms and keep it practical.
 
----
-
-## Repo layout (simple and systematic)
+### What’s inside (quick tour)
 ```
 .
 ├── data/
-│   ├── classes.txt          # Category names used by the model
-│   └── raw/                 # Source CSV files (train/val/test)
+│   ├── classes.txt          # Category names
+│   └── raw/                 # Original CSV files
 ├── outputs/
-│   ├── figures/             # Plots and charts (saved output)
+│   ├── figures/             # Charts and plots (saved output)
 │   └── models/              # Trained model files
 ├── src/
-│   ├── datasets.py          # Data loading + preprocessing
-│   ├── explore.py           # Quick analysis (label distribution)
-│   ├── models.py            # Model architecture
-│   └── train.py             # Training + evaluation loop
+│   ├── datasets.py          # Data loading and preprocessing
+│   ├── explore.py           # Simple charts for class distribution
+│   ├── models.py            # Model definitions
+│   └── train.py             # Training and evaluation loop
 └── README.md
 ```
 
----
+### How a non‑technical reader can think about the workflow
+1. **Collect and label the data** (stored in `data/raw/`).
+2. **Teach the model** using the training script.
+3. **Review the results** with accuracy metrics and a confusion matrix.
+4. **Save the model** so it can be used later.
 
-## End‑to‑end workflow (plain English)
-1. **Collect the data**  
-   Store your CSV files inside `data/raw/`.  
-
-2. **Confirm the categories**  
-   The list of class names is in `data/classes.txt`.  
-
-3. **Train the model**  
-   Run the script once and the model learns how to map text → category.  
-
-4. **Review the results**  
-   You’ll see accuracy and a confusion matrix so it’s easy to understand what the model gets right and where it struggles.  
-
-5. **Save the model**  
-   The trained weights are saved automatically in `outputs/models/`.
-
----
-
-## How to run it (straightforward steps)
-1. Install standard Python ML libraries (PyTorch + Transformers).  
-2. Put your CSV files into `data/raw/`.  
-3. Run:
+### Running it (for anyone who wants to try)
+1. Install the Python requirements you normally use for PyTorch and Transformers.
+2. Place your CSV files in `data/raw/`.
+3. Run the training script:
    ```bash
    python src/train.py
    ```
-4. Your trained model will appear in `outputs/models/`.
-
----
-
-## If I were doing this in a business setting next
-* Add a lightweight dashboard so anyone can upload text and see the predicted category instantly.
-* Track accuracy over time and schedule retraining as topics change.
-* Expand the dataset with more sources to improve coverage and reduce bias.
-
----
-
-### One‑line takeaway
-I built a clean, end‑to‑end news classification pipeline that turns raw text into structured insights a business can act on.
+4. Trained models land in `outputs/models/`.
